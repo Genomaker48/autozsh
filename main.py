@@ -1,7 +1,7 @@
 import sys, time
 from sys import stdout
 
-print(' VERSION DE PRUEBA        Que desea hacer        VERSION DE PRUEBA ')
+print(' VERSION DE PRUEBA        Que desea hacer        SOLO PARA ARCH LINUX ')
 time.sleep(1)
 print('\n\n 1 -> Iniciar con la instalacion.')
 time.sleep(1)
@@ -10,7 +10,7 @@ time.sleep(1)
 a = int(input('\n\n Numero de la accion -> '))
 time.sleep(1)
 if a == 1:
-    os.execute("sudo sh ./autozsh.sh")
+    os.execute("sh ./autozsh.sh")
 
 if a == 2:
     print('Ok, vuelve cuando quieras.')
