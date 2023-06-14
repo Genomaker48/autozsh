@@ -18,12 +18,12 @@
 __sudo-replace-buffer() {
   local old=$1 new=$2 space=${2:+ }
 
-  # if the cursor is positioned in the $old part of the text, make
-  # the substitution and leave the cursor after the $new text
+  # if the cursor is positioned in the $old part of the text, make.
+  # the substitution and leave the cursor after the $new text.
   if [[ $CURSOR -le ${#old} ]]; then
     BUFFER="${new}${space}${BUFFER#$old }"
     CURSOR=${#new}
-  # otherwise just replace $old with $new in the text before the cursor
+  # otherwise just replace $old with $new in the text before the cursor.
   else
     LBUFFER="${new}${space}${LBUFFER#$old }"
   fi
