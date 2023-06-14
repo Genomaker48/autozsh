@@ -1,7 +1,7 @@
 import sys, time
 from sys import stdout
 
-print(' VERSION DE PRUEBA        Que desea hacer        SOLO PARA ARCH LINUX ')
+print(' VERSION DE PRUEBA        Que desea hacer        SOLO PARA ARCH LINUX(DE MOMENTO) ')
 time.sleep(1)
 print('\n\n 1 -> Iniciar con la instalacion.')
 time.sleep(1)
