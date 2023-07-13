@@ -62,10 +62,10 @@ alias cat='bat'
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Plugins
-source /usr/share/plugins/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/plugins/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/plugins/zsh/zsh-sudo/sudo.plugin.zsh
-source /usr/share/plugins/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
+source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # Functions
 function mkt(){
