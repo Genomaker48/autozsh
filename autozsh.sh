@@ -8,7 +8,7 @@ function start(){
     sleep 10 
     echo -e "${green}Empezando."
     sleep 5
-    sudo pacman -S zsh lsd bat nerd-fonts awesome-nerd-fonts --needed --noconfirm
+    sudo pacman -S zsh lsd bat --needed --noconfirm
     mv .zshrc ~/
     sudo mkdir /usr/share/zsh/plugins/
     sudo mkdir /usr/share/zsh/plugins/zsh-sudo-plugin/
