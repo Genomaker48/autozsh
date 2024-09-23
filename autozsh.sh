@@ -5,28 +5,26 @@ blue="\e[0;34m\033[1m"
 
 function start(){
     echo -e "${green}(SoloArch) Bienvenido, este programa instalara en tu equipo zsh, además de volverse tu shell principal. (SoloArch)"
-    sleep 10 
+    sleep 5 
     echo -e "${green}Empezando."
     sleep 5
+    paru -S zsh-autocomplete zsh-autosuggestions zsh-syntax-highlighting
     sudo pacman -S zsh lsd bat --needed --noconfirm
-    mv .zshrc ~/
-    sudo mkdir /usr/share/zsh/plugins/
-    sudo mkdir /usr/share/zsh/plugins/zsh-sudo-plugin/
-    sudo mkdir /usr/share/zsh/plugins/zsh-autocomplete/
-    sudo mkdir /usr/share/zsh/plugins/zsh-autosuggestions/
-    sudo mkdir /usr/share/zsh/plugins/zsh-syntax-highlighting/
+    sudo mkdir /usr/share/zsh/plugins/zsh-sudo
+    cp .zshrc $HOME
+    sudo cp .zshrc /root/
     sudo mv plugin/sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo-plugin
-    sudo mv plugin/zsh-autocomplete.plugin.zsh /usr/share/zsh/plugins/zsh-autocomplete
+    sudo mv lugin/zsh-autocomplete.plugin.zsh /usr/share/zsh/plugins/zsh-autocomplete
     sudo mv plugin/zsh-autosuggestions.zsh /usr/share/zsh/plugins/zsh-autosuggestions
     sudo mv plugin/zsh-syntax-highlighting.zsh /usr/share/zsh/plugins/zsh-syntax-highlighting
     git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
     echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
     echo -e "${green}Terminando."
     sleep 5
-    sudo usermod -s /bin/zsh $USER
     sudo chsh -s /bin/zsh $USER
-    sudo usermod -s /bin/zsh root
     sudo chsh -s /bin/zsh root
+    sudo su
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
     echo -e "${green}Ya esta todo listo"
     sleep 5
 }
