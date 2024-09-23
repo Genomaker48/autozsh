@@ -1,2 +1,2 @@
 # autozsh
-¿Quieres tener zsh como shell pero no tienes tiempo suficiente? Entonces estas en el repositorio correcto
+Si has buscado la forma de tener una buena zsh estás en el repositorio correcto (Problemas arreglados)
