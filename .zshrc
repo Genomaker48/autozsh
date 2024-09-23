@@ -1,6 +1,7 @@
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
-
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=off
 # Enable Powerlevel10k instant prompt. Should stay at the top of ~/.zshrc.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -43,6 +44,7 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+source $HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
@@ -65,7 +67,6 @@ alias cat='bat'
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-sudo/sudo.plugin.zsh
-source /usr/share/zsh/plugins/powerlevel10k/powerlevel10k.zsh-theme
 
 # Functions
 function mkt(){
@@ -125,5 +126,29 @@ function rmk(){
 	shred -zun 10 -v $1
 }
 
+function v(){
+  nvim $1 $2 $3 $4 $5
+}
+
+function sv(){
+  sudo nvim $1 $2 $3 $4 $5  
+}
+
+function ap(){
+  scrcpy $1 $2 $3 $4 $5
+}
+
+function azt(){
+  scrcpy -s 320416996860
+}
+
 # Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
 (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
+
+#keybindings configuration
+
+bindkey "^[[H" beginning-of-line # Keybin Home
+bindkey "^[[F" end-of-line       # Keybin End
+bindkey "^[[3~" delete-char      # Keybin Delete
+bindkey "^[[1;3C" forward-word   # Keybin alt + left
+bindkey "^[[1;3D" backward-word  # Keybin alt + right
