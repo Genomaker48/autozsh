@@ -126,22 +126,6 @@ function rmk(){
 	shred -zun 10 -v $1
 }
 
-function v(){
-  nvim $1 $2 $3 $4 $5
-}
-
-function sv(){
-  sudo nvim $1 $2 $3 $4 $5  
-}
-
-function ap(){
-  scrcpy $1 $2 $3 $4 $5
-}
-
-function azt(){
-  scrcpy -s 320416996860
-}
-
 # Finalize Powerlevel10k instant prompt. Should stay at the bottom of ~/.zshrc.
 (( ! ${+functions[p10k-instant-prompt-finalize]} )) || p10k-instant-prompt-finalize
 
